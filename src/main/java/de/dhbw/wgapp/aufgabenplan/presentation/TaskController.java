@@ -21,11 +21,8 @@ public class TaskController {
     public void createTask(@RequestBody TaskDto taskDto) {
         // Viel logik
 
-        Task task = new Task();
-        task.bearbeiter = taskDto.bearbeiter;
-        task.titel = taskDto.titel;
-        task.dueDay = taskDto.dueDay;
-
+        TaskMapper mapper = new TaskMapper();
+        Task task = mapper.map(taskDto);
         taskService.createTask(task);
 
 

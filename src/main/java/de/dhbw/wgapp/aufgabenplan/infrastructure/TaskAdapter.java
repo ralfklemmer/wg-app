@@ -1,11 +1,12 @@
 package de.dhbw.wgapp.aufgabenplan.infrastructure;
 
+import de.dhbw.wgapp.aufgabenplan.core.api.infrastructure.TaskRepository;
+import de.dhbw.wgapp.aufgabenplan.core.model.Task;
 import de.dhbw.wgapp.aufgabenplan.db.DummyDB;
-import de.dhbw.wgapp.aufgabenplan.presentation.TaskDto;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TaskRepositoryImpl implements TaskRepository {
+public class TaskAdapter implements TaskRepository {
     private DummyDB db = new DummyDB();
 
     @Override
@@ -14,7 +15,7 @@ public class TaskRepositoryImpl implements TaskRepository {
     }
 
     @Override
-    public void save(TaskDto task) {
+    public void save(Task task) {
 
         //TODO finde den Benutzer, setze ihn im Task.
         db.save(task);
