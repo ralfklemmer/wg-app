@@ -2,7 +2,7 @@ package de.dhbw.wgapp.aufgabenplan.presentation;
 
 import de.dhbw.wgapp.aufgabenplan.core.TaskService;
 import de.dhbw.wgapp.aufgabenplan.core.TaskServiceInterface;
-import de.dhbw.wgapp.aufgabenplan.dataaccess.ExternalSystemClient;
+import de.dhbw.wgapp.aufgabenplan.infrastructure.TaskRepositoryImpl;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -11,8 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TaskControllerTest {
     @Test
-    void name() {
-        TaskController controller = new TaskController(new TaskService(new ExternalSystemClient()));
+    void createTask() {
+        TaskController controller = new TaskController(new TaskService(new TaskRepositoryImpl()));
         TaskDto taskDto = new TaskDto();
         taskDto.bearbeiter = "LuKas";
         taskDto.dueDay = LocalDate.now();
@@ -21,9 +21,8 @@ class TaskControllerTest {
     }
 
     @Test
-    void asldjg() {
+    void createTask_usingTestDouble() {
         TaskServiceInterfaceTestDouble testDouble = new TaskServiceInterfaceTestDouble();
-
 
         TaskController controller = new TaskController(testDouble);
         controller.createTask(new TaskDto());

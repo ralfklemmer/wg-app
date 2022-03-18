@@ -1,6 +1,7 @@
 package de.dhbw.wgapp.aufgabenplan.presentation;
 
 import de.dhbw.wgapp.aufgabenplan.core.TaskServiceInterface;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +16,7 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    @PostMapping("/tasks")
+    @PostMapping(value = "/tasks", consumes = MediaType.APPLICATION_JSON_VALUE)
     public void createTask(@RequestBody TaskDto taskDto) {
         // Viel logik
 

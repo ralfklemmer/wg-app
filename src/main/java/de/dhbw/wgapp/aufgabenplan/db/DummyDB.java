@@ -5,7 +5,6 @@ import de.dhbw.wgapp.aufgabenplan.presentation.TaskDto;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class DummyDB {
     private List<TaskDto> tasks = new ArrayList<>();
