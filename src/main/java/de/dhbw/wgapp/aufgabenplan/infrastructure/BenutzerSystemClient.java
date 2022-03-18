@@ -1,6 +1,6 @@
 package de.dhbw.wgapp.aufgabenplan.infrastructure;
 
-import de.dhbw.wgapp.aufgabenplan.db.BenutzerEntity;
+import de.dhbw.wgapp.aufgabenplan.infrastructure.entity.BenutzerEntity;
 import de.dhbw.wgapp.aufgabenplan.nichtunseres.BenutzerSystem;
 import org.springframework.stereotype.Service;
 

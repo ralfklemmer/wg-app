@@ -3,7 +3,9 @@ package de.dhbw.wgapp.aufgabenplan.presentation;
 import de.dhbw.wgapp.aufgabenplan.core.TaskService;
 import de.dhbw.wgapp.aufgabenplan.core.TaskServiceInterface;
 import de.dhbw.wgapp.aufgabenplan.core.model.Task;
+import de.dhbw.wgapp.aufgabenplan.infrastructure.BenutzerSystemClient;
 import de.dhbw.wgapp.aufgabenplan.infrastructure.TaskAdapter;
+import de.dhbw.wgapp.aufgabenplan.infrastructure.db.DBClient;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -13,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TaskControllerTest {
     @Test
     void createTask() {
-        TaskController controller = new TaskController(new TaskService(new TaskAdapter()));
+        TaskController controller = new TaskController(new TaskService(new TaskAdapter(new DBClient(), new BenutzerSystemClient())));
         TaskDto taskDto = new TaskDto();
         taskDto.bearbeiter = "LuKas";
         taskDto.dueDay = LocalDate.now();

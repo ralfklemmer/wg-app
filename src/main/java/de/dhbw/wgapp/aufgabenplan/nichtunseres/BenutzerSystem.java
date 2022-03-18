@@ -1,6 +1,6 @@
 package de.dhbw.wgapp.aufgabenplan.nichtunseres;
 
-import de.dhbw.wgapp.aufgabenplan.db.BenutzerEntity;
+import de.dhbw.wgapp.aufgabenplan.infrastructure.entity.BenutzerEntity;
 
 import java.util.ArrayList;
 import java.util.List;

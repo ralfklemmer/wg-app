@@ -1,4 +1,4 @@
-package de.dhbw.wgapp.aufgabenplan.db;
+package de.dhbw.wgapp.aufgabenplan.infrastructure.entity;
 
 public class BenutzerEntity {
     private long id;
