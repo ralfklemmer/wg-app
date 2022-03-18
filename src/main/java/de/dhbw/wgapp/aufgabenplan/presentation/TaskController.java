@@ -1,6 +1,7 @@
 package de.dhbw.wgapp.aufgabenplan.presentation;
 
 import de.dhbw.wgapp.aufgabenplan.core.TaskServiceInterface;
+import de.dhbw.wgapp.aufgabenplan.core.model.Task;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +21,12 @@ public class TaskController {
     public void createTask(@RequestBody TaskDto taskDto) {
         // Viel logik
 
-        taskService.createTask(taskDto);
+        Task task = new Task();
+        task.bearbeiter = taskDto.bearbeiter;
+        task.titel = taskDto.titel;
+        task.dueDay = taskDto.dueDay;
+
+        taskService.createTask(task);
 
 
         // noch mehr logik

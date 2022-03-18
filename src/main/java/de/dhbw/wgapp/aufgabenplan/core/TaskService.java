@@ -1,7 +1,7 @@
 package de.dhbw.wgapp.aufgabenplan.core;
 
+import de.dhbw.wgapp.aufgabenplan.core.model.Task;
 import de.dhbw.wgapp.aufgabenplan.infrastructure.TaskRepository;
-import de.dhbw.wgapp.aufgabenplan.presentation.TaskDto;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,12 +13,12 @@ public class TaskService implements TaskServiceInterface {
         this.taskRepository = dao;
     }
 
-    public void createTask(TaskDto taskDto) {
+    public void createTask(Task task) {
         // gibt es den Bewohner
 
         // ist sein Saldo positiv?
 
-        taskRepository.save(taskDto);
+        taskRepository.save(task);
     }
 
     @Override

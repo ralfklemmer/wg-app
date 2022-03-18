@@ -1,9 +1,9 @@
 package de.dhbw.wgapp.aufgabenplan.core;
 
-import de.dhbw.wgapp.aufgabenplan.presentation.TaskDto;
+import de.dhbw.wgapp.aufgabenplan.core.model.Task;
 
 public interface TaskServiceInterface {
-    void createTask(TaskDto taskDto);
+    void createTask(Task task);
 
     String findAll();
 
